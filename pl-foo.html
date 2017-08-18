@@ -7,7 +7,7 @@
         display: block;
       }
     </style>
-    <h2>Hello [[prop1]]!</h2>
+    <h2>Hello [[ name ]]!</h2>
   </template>
 
   <script>
@@ -20,14 +20,34 @@
      * @demo demo/index.html
      */
     class PlFoo extends Polymer.Element {
-      static get is() { return 'pl-foo'; }
+
+      static get is() {
+        return 'pl-foo';
+      }
+
       static get properties() {
         return {
-          prop1: {
+          name: {
             type: String,
             value: 'pl-foo'
           }
         };
+      }
+
+      constructor() {
+        super();
+      }
+
+      ready() {
+        super.ready();
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+      }
+
+      disconnectedCallback() {
+        super.disconnectedCallback();
       }
     }
 
